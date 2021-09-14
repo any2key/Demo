@@ -1,0 +1,84 @@
+<div class="mat-elevation-z8">
+  <h4 class="header">Компьютеры</h4>
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="Number">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Номер </th>
+      <td mat-cell *matCellDef="let row"> {{row.Number}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="State">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Состояние </th>
+      <td mat-cell *matCellDef="let row">
+        <span *ngIf="row.State==0" matTooltip="Свободен">
+          <span style="color:green" class="material-icons">
+            computer
+          </span>
+        </span>
+        <span *ngIf="row.State==1">
+          <span matTooltip="Занят" style="color:darkred" class="material-icons">
+            computer
+          </span>
+        </span>
+        <span *ngIf="row.State==2">
+          <span matTooltip="Выключен/нет связи" style="color:darkred" class="material-icons-round">
+            highlight_off
+          </span>
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Ip">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Адрес </th>
+      <td mat-cell *matCellDef="let row"> {{row.Ip}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Busy">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Занят до </th>
+      <td mat-cell *matCellDef="let row">
+        <span *ngIf="row.State==1">
+          {{row.BusyDateTime|date:"dd.MM.yyyy HH:mm"}}
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Info">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Подробнее </th>
+      <td mat-cell *matCellDef="let row">
+        <button *ngIf="row.State!=2" mat-button>
+          <span class="material-icons">
+            show_chart
+          </span>
+        </button>
+      </td>
+         
+    </ng-container>
+
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Действия </th>
+      <td mat-cell *matCellDef="let row">
+        <span *ngIf="row.State==0">
+          <button (click)="unlock(row.Id)" mat-button matTooltip="Разблокировать">
+            <span class="material-icons">
+              unlock
+            </span>
+          </button>
+        </span>
+        <span *ngIf="row.State==1">
+          <button (click)="lock(row.Id)" mat-button matTooltip="Заблокировать">
+            <span class="material-icons">
+              lock
+            </span>
+          </button>
+        </span>
+      </td>
+      
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

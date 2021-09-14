@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42165090-210C-47FB-8E67-82EC21675F42}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DemoLk</RootNamespace>
+    <AssemblyName>DemoLk</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44363</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="auth\ITokenFactory.cs" />
+    <Compile Include="auth\TokenFactory.cs" />
+    <Compile Include="Context\AppDbContext.cs" />
+    <Compile Include="Context\AppDbInitializer.cs" />
+    <Compile Include="Controllers\AuthorizeController.cs" />
+    <Compile Include="Controllers\ControllerBaseEx.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WorkStationController.cs" />
+    <Compile Include="Crypto\Crypto.cs" />
+    <Compile Include="DbModelExtWS.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Identity\IdentityUser.cs" />
+    <Compile Include="Models\Identity\Token.cs" />
+    <Compile Include="Models\Identity\User.cs" />
+    <Compile Include="Models\Request\Request.cs" />
+    <Compile Include="Models\Response\Response.cs" />
+    <Compile Include="Models\WorkStation\WorkStation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TcpClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="front\.gitignore" />
+    <Content Include="front\karma.conf.js" />
+    <Content Include="front\src\admin\dashboard\dashboard.component.css" />
+    <Content Include="front\src\admin\dashboard\dashboard.component.html" />
+    <Content Include="front\src\app\account\login\login.component.css" />
+    <Content Include="front\src\app\account\login\login.component.html" />
+    <Content Include="front\src\app\app.component.css" />
+    <Content Include="front\src\app\app.component.html" />
+    <Content Include="front\src\app\confirm\confirm.component.css" />
+    <Content Include="front\src\app\confirm\confirm.component.html" />
+    <Content Include="front\src\app\forbidden\forbidden.component.css" />
+    <Content Include="front\src\app\forbidden\forbidden.component.html" />
+    <Content Include="front\src\app\home\home.component.css" />
+    <Content Include="front\src\app\home\home.component.html" />
+    <Content Include="front\src\app\not-found\not-found.component.css" />
+    <Content Include="front\src\app\not-found\not-found.component.html" />
+    <Content Include="front\src\favicon.ico" />
+    <Content Include="front\src\index.html" />
+    <Content Include="front\src\styles.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="front\.browserslistrc" />
+    <Content Include="front\.editorconfig" />
+    <Content Include="front\.git\COMMIT_EDITMSG" />
+    <Content Include="front\.git\config" />
+    <Content Include="front\.git\description" />
+    <Content Include="front\.git\HEAD" />
+    <Content Include="front\.git\hooks\applypatch-msg.sample" />
+    <Content Include="front\.git\hooks\commit-msg.sample" />
+    <Content Include="front\.git\hooks\fsmonitor-watchman.sample" />
+    <Content Include="front\.git\hooks\post-update.sample" />
+    <Content Include="front\.git\hooks\pre-applypatch.sample" />
+    <Content Include="front\.git\hooks\pre-commit.sample" />
+    <Content Include="front\.git\hooks\pre-merge-commit.sample" />
+    <Content Include="front\.git\hooks\pre-push.sample" />
+    <Content Include="front\.git\hooks\pre-rebase.sample" />
+    <Content Include="front\.git\hooks\pre-receive.sample" />
+    <Content Include="front\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="front\.git\hooks\push-to-checkout.sample" />
+    <Content Include="front\.git\hooks\update.sample" />
+    <Content Include="front\.git\index" />
+    <Content Include="front\.git\info\exclude" />
+    <Content Include="front\.git\logs\HEAD" />
+    <Content Include="front\.git\logs\refs\heads\master" />
+    <Content Include="front\.git\objects\02\972627f8df364102ce4ede71c8bd5f3660e1d8" />
+    <Content Include="front\.git\objects\09\2345b02e807773164dba19f2b4d1f4ab869f67" />
+    <Content Include="front\.git\objects\2f\0b4e3be40f3a855718932f0257d7ce15e7d893" />
+    <Content Include="front\.git\objects\36\12073bc31cd4c1f5d6cbb00318521e9a61bd8a" />
+    <Content Include="front\.git\objects\37\3f538a71977ec2d3f7a88b69618fca44fa1af1" />
+    <Content Include="front\.git\objects\42\7441dc9308514d0e294ed878a168972f3a4c46" />
+    <Content Include="front\.git\objects\55\19f651a3085dfc938a2fcd2acb455e05950562" />
+    <Content Include="front\.git\objects\58\25478d74b5576b0f8330bdf5179b3ec6503fb8" />
+    <Content Include="front\.git\objects\59\d9a3a3e73ffc640517ef488f6f89d6270195d1" />
+    <Content Include="front\.git\objects\6d\f828326e3ffeb2b1a593d052597a267e24e1ef" />
+    <Content Include="front\.git\objects\78\bdb7aa54e03b056488c6f1140322221776f0b2" />
+    <Content Include="front\.git\objects\82\d91dc4a4de57f380b66c59cdd16ff6cd5798e4" />
+    <Content Include="front\.git\objects\90\d4ee0072ce3fc41812f8af910219f9eea3c3de" />
+    <Content Include="front\.git\objects\91\28bed159bb2bf85578a02a6358d05991098d68" />
+    <Content Include="front\.git\objects\99\7406ad22c29aae95893fb3d666c30258a09537" />
+    <Content Include="front\.git\objects\a4\2be23a21f1c9853a96c38f6ea7646fb42dd04c" />
+    <Content Include="front\.git\objects\b1\c6c96a9de8f091f39b3b8feb7e29cfcfb1ed81" />
+    <Content Include="front\.git\objects\b4\dd6032fa213e5e640b4e7eef0959354fd4d459" />
+    <Content Include="front\.git\objects\c2\8b6887ebddfdc13f53c1add288ef198441dd13" />
+    <Content Include="front\.git\objects\c7\b673cf44b388e9989fe908b78d7d73cd2e1409" />
+    <Content Include="front\.git\objects\ca\10924c47b26003ac758ba4d61926ad40223126" />
+    <Content Include="front\.git\objects\cf\00b617b1ab6b542abc4235a4f4d5d74c9be7a3" />
+    <Content Include="front\.git\objects\d3\b5c3eab1e52ed1c50d9c94608aef557af8cfed" />
+    <Content Include="front\.git\objects\d5\64d0bc3dd917926892c55e3706cc116d5b165e" />
+    <Content Include="front\.git\objects\d9\94617fe3c653e9dde10100d43985fd1ac2d350" />
+    <Content Include="front\.git\objects\db\0e438c6c4bdd4d78fdb0f3ff96e7b1d151dd42" />
+    <Content Include="front\.git\objects\de\51f68a2cda6df56ca45d06ade37f126bfc8e31" />
+    <Content Include="front\.git\objects\de\f2f94c0feaae23fd91052e681cd31cc9103835" />
+    <Content Include="front\.git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391" />
+    <Content Include="front\.git\objects\f5\6ff47022c7a46eac3aee615d6d9150338524dc" />
+    <Content Include="front\.git\objects\fd\34373c46d90a9f505b40126ef81fa5c039b357" />
+    <Content Include="front\.git\refs\heads\master" />
+    <Content Include="front\angular.json" />
+    <Content Include="front\package-lock.json" />
+    <Content Include="front\package.json" />
+    <Content Include="front\README.md" />
+    <Content Include="front\src\assets\.gitkeep" />
+    <Content Include="front\tsconfig.app.json" />
+    <Content Include="front\tsconfig.json" />
+    <Content Include="front\tsconfig.spec.json" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="front\.git\objects\info\" />
+    <Folder Include="front\.git\objects\pack\" />
+    <Folder Include="front\.git\refs\tags\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="front\src\admin\admin.module.ts" />
+    <TypeScriptCompile Include="front\src\admin\admin.routing.ts" />
+    <TypeScriptCompile Include="front\src\admin\dashboard\dashboard.component.spec.ts" />
+    <TypeScriptCompile Include="front\src\admin\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="front\src\app\account\account.module.ts" />
+    <TypeScriptCompile Include="front\src\app\account\account.routing.ts" />
+    <TypeScriptCompile Include="front\src\app\account\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="front\src\app\account\login\login.component.ts" />
+    <TypeScriptCompile Include="front\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="front\src\app\app.component.ts" />
+    <TypeScriptCompile Include="front\src\app\app.module.ts" />
+    <TypeScriptCompile Include="front\src\app\app.routing.ts" />
+    <TypeScriptCompile Include="front\src\app\confirm\confirm.component.spec.ts" />
+    <TypeScriptCompile Include="front\src\app\confirm\confirm.component.ts" />
+    <TypeScriptCompile Include="front\src\app\forbidden\forbidden.component.spec.ts" />
+    <TypeScriptCompile Include="front\src\app\forbidden\forbidden.component.ts" />
+    <TypeScriptCompile Include="front\src\app\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="front\src\app\home\home.component.ts" />
+    <TypeScriptCompile Include="front\src\app\not-found\not-found.component.spec.ts" />
+    <TypeScriptCompile Include="front\src\app\not-found\not-found.component.ts" />
+    <TypeScriptCompile Include="front\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="front\src\environments\environment.ts" />
+    <TypeScriptCompile Include="front\src\guards\adminAuth.ts" />
+    <TypeScriptCompile Include="front\src\interceptors\auth-interceptor.ts" />
+    <TypeScriptCompile Include="front\src\main.ts" />
+    <TypeScriptCompile Include="front\src\models\apiModel.ts" />
+    <TypeScriptCompile Include="front\src\models\loginData.ts" />
+    <TypeScriptCompile Include="front\src\models\model.ts" />
+    <TypeScriptCompile Include="front\src\polyfills.ts" />
+    <TypeScriptCompile Include="front\src\services\api.service.ts" />
+    <TypeScriptCompile Include="front\src\services\ui.service.ts" />
+    <TypeScriptCompile Include="front\src\services\user.service.ts" />
+    <TypeScriptCompile Include="front\src\shared-material\shared-material.module.ts" />
+    <TypeScriptCompile Include="front\src\test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58746</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44363/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

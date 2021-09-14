@@ -1,0 +1,51 @@
+
+<mat-sidenav-container class="sidenav-container" style="height: 100vh">
+
+  <mat-sidenav *ngIf="Role=='admin'" #drawer class="sidenav" fixedInViewport mode="over" [opened]="false" [autoFocus]="false" style="width:15rem;height:100vh">
+    <mat-list role="list">
+
+      <mat-list-item role="listitem">
+        <button mat-button style="width:100%;text-align:start" (click)="route('/')">
+          <span class="material-icons">
+            grid_view
+          </span>
+          <span style="align-self:end">
+            Панель управления
+          </span>
+        </button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">
+        <button mat-button style="width:100%;text-align:start" (click)="logout()">
+          <span class="material-icons">
+            logout
+          </span>
+          <span style="align-self:end">
+            Выйти
+          </span>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-sidenav>
+
+
+
+
+  <mat-toolbar color="primary">
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="/">Система управления компьютерами в клубе - демо</a>
+    <button mat-button style="margin-left:auto">
+      <span *ngIf="User!=null">
+        <span>{{User}}</span>
+      </span>
+    </button>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>
+
+
