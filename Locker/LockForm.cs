@@ -99,7 +99,7 @@ namespace Locker
             InitializeComponent();
             server = Server.Server.getServer();
             server.Unlocked += Server_Unlocked;
-            //DisableCtrlAltDelButtons();
+            DisableCtrlAltDelButtons();
             controller = new LockFormController();
         }
 
